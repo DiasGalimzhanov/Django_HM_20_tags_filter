@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load customtags %}
+{% block content %}
+<h1>Home</h1>
+
+{% for user in users %}
+    <p>{{user | country:'country'}}</p>
+{% endfor %}
+
+<p>{{3.141599 | rounded_value:2}}</p>
+
+{% for user in users %}
+<p>{% name user.name %}</p>
+{% endfor %}
+
+{% for user in users %}
+<p>{% add user.name user.city %}</p>
+{% endfor %}
+
+{% endblock %}
